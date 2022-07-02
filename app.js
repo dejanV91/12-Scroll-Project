@@ -22,3 +22,44 @@ window.addEventListener("scroll", function(){
     
 })
 
+const scrollLink=document.querySelectorAll(".scroll-link");
+
+scrollLink.forEach(function(item){
+    item.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        const id=e.currentTarget.getAttribute("href").slice(1);
+        
+
+        if (id !== "") {
+            
+            let element=document.getElementById(id);
+            let heightElement=element.offsetTop;
+            
+            
+            if (heightElement != 0) {
+                let position=heightElement - 160;
+                window.scrollTo({
+                    top:position,
+                })
+                console.log(position);
+                position=0;
+                console.log(position);
+            }else{
+                let position=heightElement - 160;
+                window.scrollTo({
+                    top:position,
+                })
+            }
+            
+        }else{
+            window.scrollTo({
+                top:0,
+                
+            })
+        }
+        
+    });
+});
+
