@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+
     <title>My app</title>
 </head>
 <body>
     <header>
         <main class="main-bg">
-            <nav class="nav-section fixNav">
+            <nav class="nav-section">
                 <div class="logo-section">
                     <img src="./images/logo.svg" alt="logo image">
                 </div>
                 <ul class="links">
-                    <li class="link"><a href="#">home</a></li>
-                    <li class="link"><a href="#aboutUs">about</a></li>
-                    <li class="link"><a href="#services">services</a></li>
-                    <li class="link"><a href="#feature">tours</a></li>
+                    <li class="link scroll-link"><a href="#">home</a></li>
+                    <li class="link scroll-link"><a href="#aboutUs">about</a></li>
+                    <li class="link scroll-link"><a href="#services">services</a></li>
+                    <li class="link scroll-link"><a href="#feature">tours</a></li>
                 </ul>
             </nav>
             <section class="main-section">
@@ -30,9 +32,14 @@
                         dolorem sit nihil? Cumque, porro 
                         omnis quisquam illo placeat ipsum!
                     </p>
-                    <button type="button" id="explore">
+                    <a href="#feature" class="scroll-link" id="explore">
                         explore tours
-                    </button>
+                    </a>
+                    <a href="#" class="pointToHome">
+                        <i class="material-symbols-outlined">
+                            arrow_upward
+                        </i>
+                    </a>
                 </div>
             </section>
         </main>
@@ -48,7 +55,8 @@
     </article>
 
     <footer class="footer">
-        <p>copyright &copy backroads travel tours company <span id="year">2022</span>. all rights reserved </p>
+        <p>copyright &copy backroads travel tours company <span id="year"></span>. all rights reserved </p>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>
