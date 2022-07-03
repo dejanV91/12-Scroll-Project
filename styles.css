@@ -158,6 +158,17 @@ header{
      ADD CLASSES
 =================== */
 
+.toggle-nav{
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+
+.toggle-nav:hover{
+    color: var(--color2);
+    cursor: pointer;
+}
+
 .fixNav{
     position: fixed;
     left: 0;
@@ -212,9 +223,34 @@ header{
 }
 
 @media (max-width:780px){
+
+    .nav-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+    
     .links{
         display: none;
+        flex-direction: column;
+        background-color: white;
+        transition: all 0.3s linear;
+        min-width: 100vw;
+        left: 0;
+    }
 
+    .show-links{
+        display: flex;
+    }
+
+    .link{
+        padding: 10px;
+    }
+
+    .link a {
+        color: black;
+        
     }
     .nav-section{
         background-color: white;
@@ -231,6 +267,22 @@ header{
         white-space: wrap;
         min-width: auto;
         text-align: center;
+    }
+    h1{
+        font-size: 38px;
+    }
+
+    .toggle-nav{
+        display: inline;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .pointToHome{
+        bottom: 30px;
+        right: 30px;
+        padding: 0;
     }
     
 }

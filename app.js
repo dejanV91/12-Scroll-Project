@@ -49,50 +49,14 @@ scrollLink.forEach(function(item){
         window.scrollTo({
             top:position, 
         })
-        
-
-
-
-
-
-
-
-
-
-
-        // e.preventDefault();
-
-        // const id=e.currentTarget.getAttribute("href").slice(1);
-        
-
-        // if (id !== "") {
-            
-        //     let element=document.getElementById(id);
-        //     let heightElement=element.offsetTop;
-            
-            
-        //     if (heightElement != 0) {
-        //         let position=heightElement - 160;
-        //         window.scrollTo({
-        //             top:position,
-        //         })
-        //         console.log(position);
-        //         position=0;
-        //         console.log(position);
-        //     }else{
-        //         let position=heightElement - 160;
-        //         window.scrollTo({
-        //             top:position,
-        //         })
-        //     }
-            
-        // }else{
-        //     window.scrollTo({
-        //         top:0,
-                
-        //     })
-        // }
-        
+              
     });
+});
+
+const toggleLinks = document.querySelector(".links");
+const toggleMenu = document.querySelector(".toggle-nav");
+
+toggleMenu.addEventListener("click", function(){
+    toggleLinks.classList.toggle("show-links");
 });
 
