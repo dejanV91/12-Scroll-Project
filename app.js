@@ -29,36 +29,70 @@ scrollLink.forEach(function(item){
 
         e.preventDefault();
 
-        const id=e.currentTarget.getAttribute("href").slice(1);
+        const id= e.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+       
+        const navHeight= navSection.getBoundingClientRect().height;
+        const fixNav= navSection.classList.contains("fixNav");
+        let position = element.offsetTop;
+        console.log(position);
+
+        if (!fixNav) {
+            position = position - (2*navHeight);  
+            
+   
+        }
+        
+        if (fixNav) {
+            position = position - (2*navHeight);
+        }
+
+        window.scrollTo({
+            top:position, 
+        })
+        console.log(position);
+
+
+
+
+
+
+
+
+
+
+        // e.preventDefault();
+
+        // const id=e.currentTarget.getAttribute("href").slice(1);
         
 
-        if (id !== "") {
+        // if (id !== "") {
             
-            let element=document.getElementById(id);
-            let heightElement=element.offsetTop;
+        //     let element=document.getElementById(id);
+        //     let heightElement=element.offsetTop;
             
             
-            if (heightElement != 0) {
-                let position=heightElement - 160;
-                window.scrollTo({
-                    top:position,
-                })
-                console.log(position);
-                position=0;
-                console.log(position);
-            }else{
-                let position=heightElement - 160;
-                window.scrollTo({
-                    top:position,
-                })
-            }
+        //     if (heightElement != 0) {
+        //         let position=heightElement - 160;
+        //         window.scrollTo({
+        //             top:position,
+        //         })
+        //         console.log(position);
+        //         position=0;
+        //         console.log(position);
+        //     }else{
+        //         let position=heightElement - 160;
+        //         window.scrollTo({
+        //             top:position,
+        //         })
+        //     }
             
-        }else{
-            window.scrollTo({
-                top:0,
+        // }else{
+        //     window.scrollTo({
+        //         top:0,
                 
-            })
-        }
+        //     })
+        // }
         
     });
 });
