@@ -31,26 +31,25 @@ scrollLink.forEach(function(item){
 
         const id= e.currentTarget.getAttribute("href").slice(1);
         const element = document.getElementById(id);
-       
+        
         const navHeight= navSection.getBoundingClientRect().height;
         const fixNav= navSection.classList.contains("fixNav");
         let position = element.offsetTop;
         console.log(position);
-
         if (!fixNav) {
-            position = position - (2*navHeight);  
-            
-   
+            position= position - 2*navHeight;
+            console.log("nema fix "+ position);
+        }
+        if (fixNav) {
+            position=position - navHeight;
+            console.log("ima fix "+ position);
         }
         
-        if (fixNav) {
-            position = position - (2*navHeight);
-        }
 
         window.scrollTo({
             top:position, 
         })
-        console.log(position);
+        
 
 
 

@@ -201,3 +201,36 @@ header{
         transform: scale(1);
     }
 }
+
+@media (max-width: 940px) {
+    .hero-section{
+        min-width: 550px;
+    }
+    .footer p{
+        max-width: 600px;
+    }
+}
+
+@media (max-width:780px){
+    .links{
+        display: none;
+
+    }
+    .nav-section{
+        background-color: white;
+        margin: 0;
+        padding: 0 15px;
+    }
+    header{
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+    .hero-section{
+        white-space: wrap;
+        min-width: auto;
+        text-align: center;
+    }
+    
+}
