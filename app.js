@@ -34,15 +34,15 @@ scrollLink.forEach(function(item){
         
         const navHeight= navSection.getBoundingClientRect().height;
         const fixNav= navSection.classList.contains("fixNav");
+
+        const elementFind=document.q
         let position = element.offsetTop;
-        console.log(position);
+        
         if (!fixNav) {
             position= position - 2*navHeight;
-            console.log("nema fix "+ position);
         }
         if (fixNav) {
             position=position - navHeight;
-            console.log("ima fix "+ position);
         }
         
 
@@ -56,7 +56,30 @@ scrollLink.forEach(function(item){
 const toggleLinks = document.querySelector(".links");
 const toggleMenu = document.querySelector(".toggle-nav");
 
-toggleMenu.addEventListener("click", function(){
+toggleMenu.addEventListener("click", ()=>{
     toggleLinks.classList.toggle("show-links");
+    const linksElement=document.querySelectorAll(".link");
+    linksElement.forEach(function(e){
+        e.addEventListener("click", function(a){
+
+            a.preventDefault();
+
+            const elemLinks=e.querySelector(".scroll-link");
+            const elem=elemLinks.getAttribute("href").slice(1);
+
+            if (toggleLinks.classList.contains("show-links")) {
+                toggleLinks.classList.remove("show-links");
+                
+                const item=document.getElementById(elem);
+                
+                let position = item.offsetTop-150;
+                
+                window.scrollTo({
+                    top:position,
+                });
+            } 
+            
+        })
+    });
 });
 
